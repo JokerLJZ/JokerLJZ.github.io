@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Blog of JokerLiu
 subtitle: 'Welcom'
 description: ''
 keywords:
@@ -45,12 +45,28 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
+  enable: false
+
+githubEmojis:
   enable: true
-  line_number: true
-  auto_detect: false
-  tab_replace: ''
-  wrap: true
-  hljs: false
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:
+
+permalink_pinyin:
+  enable: true
+  separator: '-' # default: '-'
+
+search:
+  path: search.xml
+  field: post
+
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'tomorrow'
+  line_number: false    # default false
+  custom_css:
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
