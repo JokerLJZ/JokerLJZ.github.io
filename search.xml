@@ -4,13 +4,31 @@
   
     
     <entry>
-      <title>北京移动工程项目管理数据处理项目</title>
-      <link href="/2020/02/16/chinamobile/"/>
-      <url>/2020/02/16/chinamobile/</url>
+      <title>工程项目管理数据分析系统</title>
+      <link href="/2020/02/16/gong-cheng-xiang-mu-guan-li-shu-ju-fen-xi-xi-tong/"/>
+      <url>/2020/02/16/gong-cheng-xiang-mu-guan-li-shu-ju-fen-xi-xi-tong/</url>
       
-        <content type="html"><![CDATA[<p>本程序旨在针对北京移动工程建设项目管理过程中获取的大量数据进行处理分析，方便项目经理通过分析结果获得项目进度及健康度的相关数据。</p>]]></content>
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Pandas </tag>
+            
+            <tag> Sqlite </tag>
+            
+            <tag> ChinaMobile </tag>
+            
+        </tags>
       
     </entry>
     
