@@ -2,7 +2,6 @@
 title: 使用Pandas提取Excel数据
 date: 2020-02-23 22:09:34
 img: https://raw.githubusercontent.com/JokerLJZ/Image/master/雪之下雪乃-1.jpg
-top: true
 categories: Python
 summary: 介绍Pandas的Excel读取方法技巧
 author: 火柴人
@@ -13,13 +12,15 @@ tags:
 
 ## 1. 原始数据表
 
-创建测试数据表 test.xlsx：  
+创建测试数据表 test.xlsx：
+
 |时间|项目经理|预算|设备数量|
 |---|--------|---|--|
 |2020-01-24|张三|2670|2
 |2019-12-27|李四|283.1|3
 |2019-12-27|王二|0|1
 | |张三|25|4
+
 
 ## 2. 使用Pandas的read_excel()函数读取原始数据表中的数据
 
