@@ -517,7 +517,7 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
 项目经理     object
 预算        float64
 设备数量      int64</code></pre>
-<h2 id="4-时间的读取"><a href="#4-时间的读取" class="headerlink" title="4. 时间的读取"></a>4. 时间的读取</h2><p>根据读取的数据可以看到时间未对应到datetime数据类型，根据read_excel函数的官方文档，函数的参数:<br>parse_dates: bool, list-like, or dict, default False<br>可以将指定column设置为时间类型，本例使用list格式修改时间column为datetime格式</p>
+<h2 id="4-时间的读取"><a href="#4-时间的读取" class="headerlink" title="4. 时间的读取"></a>4. 时间的读取</h2><p>根据读取的数据可以看到时间未对应到datetime数据类型，根据read_excel函数的官方文档，函数的参数:<br><strong>parse_dates</strong>: bool, list-like, or dict, default False<br>可以将指定column设置为时间类型，本例使用list格式修改时间column为datetime格式</p>
 <pre class=" language-python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_excel<span class="token punctuation">(</span>io<span class="token operator">=</span><span class="token string">"test.xlsx"</span><span class="token punctuation">,</span> parse_dates<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"时间"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>dtypes<span class="token punctuation">)</span>
 
@@ -763,6 +763,32 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
         </div>
     </div>
 
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'af20c00167b672baaed1',
+        clientSecret: 'd8e45022a3ba132813e7246e6deaa9fc7618f453',
+        repo: 'JokerLJZ.github.io',
+        owner: 'JokerLJZ',
+        admin: ["JokerLJZ"],
+        id: '2020-02-23T22-09-34',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
     
 
     
@@ -1185,6 +1211,34 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
+    
+        <script src="//code.tidio.co/barvq1d5n4djkzy3mbcvzbwshpsifwyo.js"></script>
+        <script> 
+            $(document).ready(function () {
+                setInterval(change_Tidio, 50);  
+                function change_Tidio() { 
+                    var tidio=$("#tidio-chat iframe");
+                    if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"85px":"20px";   
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";   
+                        document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    } 
+                    else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;   
+                        document.getElementById("tidio-chat-iframe").style.right="-15px"; 
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;   
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                        document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                    }
+                } 
+            }); 
+        </script>
     
 
     
