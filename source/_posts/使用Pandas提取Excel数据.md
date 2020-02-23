@@ -61,7 +61,7 @@ print(df.dtypes)
 ## 4. 时间的读取
 
 根据读取的数据可以看到时间未对应到datetime数据类型，根据read_excel函数的官方文档，函数的参数:  
-parse_dates: bool, list-like, or dict, default False  
+**parse_dates**: bool, list-like, or dict, default False  
 可以将指定column设置为时间类型，本例使用list格式修改时间column为datetime格式
 
 ```python
