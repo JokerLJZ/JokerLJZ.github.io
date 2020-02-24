@@ -24,7 +24,7 @@ tags:
 
 ## 2. 读取数据表获取DataFrame并进行数据预处理
 
-### 直接使用read_excel()获取test.xlsx的dataframe格式数据
+1. 直接使用read_excel()获取test.xlsx的dataframe格式数据
 
 ```python
 import pandas as pd
@@ -53,7 +53,7 @@ print(df.dtypes)
 
 根据输出结果可以查看数据类型及，接下来要对数据的格式及形势进行预处理，以满足数据分析的需求。下面分几个步骤针对几种场景做数据预处理
 
-### 1) 新增Column列设备价格，需要每行数据都进行一次设备数量×设备单价并新增Column索引
+2. 新增Column列设备价格，需要每行数据都进行一次设备数量×设备单价并新增Column索引
 
 ```python
 df["设备总价"] = df["设备数量"] * df["设备单价"]
@@ -68,7 +68,7 @@ df["设备总价"] = df["设备数量"] * df["设备单价"]
 3         NaN    张三    25.0        4        5        20
 ```
 
-### 2) 对df中的NaN数据进行替换，使用fillna()函数，根据isna函数中的参数inplace来确定是否替换原数据中的数据，本例中将时间中空的项进行替换替换成当前日期，并对时间column进行类型转换表，转换为datetime类型，使用to_datetime，转换完成后查看数据类型
+3. 对df中的NaN数据进行替换，使用fillna()函数，根据isna函数中的参数inplace来确定是否替换原数据中的数据，本例中将时间中空的项进行替换替换成当前日期，并对时间column进行类型转换表，转换为datetime类型，使用to_datetime，转换完成后查看数据类型
 
 ```python
 df.fillna(datetime.date.today(), inplace=True) 
