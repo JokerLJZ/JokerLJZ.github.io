@@ -530,8 +530,8 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
 <li>新增Column列设备价格，需要每行数据都进行一次设备数量×设备单价并新增Column索引</li>
 </ol>
 <pre class=" language-python"><code class="language-python">df<span class="token punctuation">[</span><span class="token string">"设备总价"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">"设备数量"</span><span class="token punctuation">]</span> <span class="token operator">*</span> df<span class="token punctuation">[</span><span class="token string">"设备单价"</span><span class="token punctuation">]</span></code></pre>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> df</span>
-<span class="token code keyword">         时间 项目经理    预算  设备数量  设备单价  设备总价</span>
+<pre class=" language-Markdown"><code class="language-Markdown"># df
+         时间 项目经理    预算  设备数量  设备单价  设备总价
 0  2020-01-24    张三  2670.0        2     1000      2000
 1  2019-12-27    李四   283.1        3       80       240
 2  2019-12-27    王二     0.0        1        0         0
@@ -542,13 +542,13 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
 <pre class=" language-python"><code class="language-python">df<span class="token punctuation">.</span>fillna<span class="token punctuation">(</span>datetime<span class="token punctuation">.</span>date<span class="token punctuation">.</span>today<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> 
 df<span class="token punctuation">[</span><span class="token string">"时间"</span><span class="token punctuation">]</span> <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_datetime<span class="token punctuation">(</span>arg<span class="token operator">=</span>df<span class="token punctuation">[</span><span class="token string">"时间"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> format<span class="token operator">=</span><span class="token string">"%Y/%m/%d"</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">,</span> df<span class="token punctuation">.</span>dtypes<span class="token punctuation">)</span></code></pre>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 输出空值已被替换</span>
-<span class="token code keyword">         时间 项目经理    预算  设备数量  设备单价  设备总价</span>
+<pre class=" language-Markdown"><code class="language-Markdown"># 输出空值已被替换
+         时间 项目经理    预算  设备数量  设备单价  设备总价
 0  2020-01-24    张三  2670.0        2     1000      2000
 1  2019-12-27    李四   283.1        3       80       240
 2  2019-12-27    王二     0.0        1        0         0
 3  2020-02-24    张三    25.0        4        5        20
-<span class="token title important"><span class="token punctuation">#</span> 时间列类型已经转换为Datetime</span>
+# 时间列类型已经转换为Datetime
 时间        datetime64[ns]
 项目经理            object
 预算               float64
@@ -557,8 +557,8 @@ df<span class="token punctuation">[</span><span class="token string">"时间"</s
 设备总价             int64</code></pre>
 <h2 id="3-数据index替换"><a href="#3-数据index替换" class="headerlink" title="3. 数据index替换"></a>3. 数据index替换</h2><p>获取数据后为了方便分析或者标注，在初始阶段对index(行)和columns(列)名称可以进行替换，方法为datafream.index = list</p>
 <pre class=" language-python"><code class="language-python">df<span class="token punctuation">.</span>index <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"项目A"</span><span class="token punctuation">,</span> <span class="token string">"项目B"</span><span class="token punctuation">,</span> <span class="token string">"项目C"</span><span class="token punctuation">,</span> <span class="token string">"项目X"</span><span class="token punctuation">]</span></code></pre>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 输出空值已被替换</span>
-<span class="token code keyword">             时间 项目经理    预算  设备数量  设备单价  设备总价</span>
+<pre class=" language-Markdown"><code class="language-Markdown"># 输出空值已被替换
+             时间 项目经理    预算  设备数量  设备单价  设备总价
 项目A  2020-01-24    张三  2670.0        2     1000      2000
 项目B  2019-12-27    李四   283.1        3       80       240
 项目C  2019-12-27    王二     0.0        1        0         0
