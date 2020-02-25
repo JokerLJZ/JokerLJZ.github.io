@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Pandas DataFrame对行和列求和及添加新行和列, 火柴人的Blog">
+    <meta name="keywords" content="DataFrame对行和列求和及添加新行和列, 火柴人的Blog">
     <meta name="description" content="Pandas DataFrame对行和列求和及添加新行和列">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Pandas DataFrame对行和列求和及添加新行和列 | 火柴人的Blog</title>
+    <title>DataFrame对行和列求和及添加新行和列 | 火柴人的Blog</title>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/JokerLJZ/Image/master/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -286,7 +286,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Pandas DataFrame对行和列求和及添加新行和列</h1>
+                    <h1 class="description center-align post-title">DataFrame对行和列求和及添加新行和列</h1>
                 </div>
             </div>
         </div>
@@ -450,7 +450,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    278
+                    276
                 </div>
                 
 
@@ -524,16 +524,13 @@
 <td>99</td>
 </tr>
 </tbody></table>
-<h3 id="2-计算各行和各列的和并增加新列和新行作为记录"><a href="#2-计算各行和各列的和并增加新列和新行作为记录" class="headerlink" title="2. 计算各行和各列的和并增加新列和新行作为记录"></a>2. 计算各行和各列的和并增加新列和新行作为记录</h3><p>方法一，借助lamda表达式</p>
-<pre class=" language-python"><code class="language-python">df<span class="token punctuation">[</span><span class="token string">"合计"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">.</span>apply<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+<h3 id="2-计算各行和各列的和并增加新列和新行作为记录"><a href="#2-计算各行和各列的和并增加新列和新行作为记录" class="headerlink" title="2. 计算各行和各列的和并增加新列和新行作为记录"></a>2. 计算各行和各列的和并增加新列和新行作为记录</h3><h4 id="方法一-借助lamda表达式"><a href="#方法一-借助lamda表达式" class="headerlink" title="方法一: 借助lamda表达式"></a>方法一: 借助lamda表达式</h4><pre class=" language-python"><code class="language-python">df<span class="token punctuation">[</span><span class="token string">"合计"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">.</span>apply<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
 df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token string">"合计"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">.</span>apply<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-<p>方法二, 借助np.sum函数</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<h4 id="方法二-借助np-sum函数"><a href="#方法二-借助np-sum函数" class="headerlink" title="方法二: 借助np.sum函数"></a>方法二: 借助np.sum函数</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 
 df<span class="token punctuation">[</span><span class="token string">"合计"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">.</span>apply<span class="token punctuation">(</span>np<span class="token punctuation">.</span>sum<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
 df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token string">"合计"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">.</span>apply<span class="token punctuation">(</span>np<span class="token punctuation">.</span>sum<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span></code></pre>
-<p>两种方法输出相同：</p>
-<table>
+<h4 id="两种方法输出相同："><a href="#两种方法输出相同：" class="headerlink" title="两种方法输出相同："></a>两种方法输出相同：</h4><table>
 <thead>
 <tr>
 <th></th>
@@ -871,7 +868,7 @@ df<span class="token punctuation">.</span>loc<span class="token punctuation">[</
         repo: 'JokerLJZ.github.io',
         owner: 'JokerLJZ',
         admin: ["JokerLJZ"],
-        id: '2020-02-26T00-01-23',
+        id: '2020-02-26T00-57-35',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -900,9 +897,9 @@ df<span class="token punctuation">.</span>loc<span class="token punctuation">[</
                 <a href="/2020/02/26/dataframe-dui-xing-he-lie-qiu-he-ji-tian-jia-xin-xing-he-lie/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/JokerLJZ/Image/master/740128.png" class="responsive-img" alt="Pandas DataFrame对行和列求和及添加新行和列">
+                        <img src="https://raw.githubusercontent.com/JokerLJZ/Image/master/740128.png" class="responsive-img" alt="DataFrame对行和列求和及添加新行和列">
                         
-                        <span class="card-title">Pandas DataFrame对行和列求和及添加新行和列</span>
+                        <span class="card-title">DataFrame对行和列求和及添加新行和列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
