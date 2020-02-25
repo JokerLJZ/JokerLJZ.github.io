@@ -1,5 +1,5 @@
 ---
-title: 使用Pandas提取Excel数据
+title: Pandas提取Excel数据
 date: 2020-02-23 22:09:34
 img: https://raw.githubusercontent.com/JokerLJZ/Image/master/雪之下雪乃-1.jpg
 categories: Python
