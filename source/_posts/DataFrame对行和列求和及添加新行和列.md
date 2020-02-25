@@ -1,7 +1,6 @@
 ---
-layout: post
-title: Pandas DataFrame对行和列求和及添加新行和列
-date: 2020-02-26 00:01:23
+title: DataFrame对行和列求和及添加新行和列
+date: 2020-02-26 00:57:35
 img: https://raw.githubusercontent.com/JokerLJZ/Image/master/740128.png
 categories: Python
 summary: Pandas DataFrame对行和列求和及添加新行和列
@@ -30,14 +29,14 @@ df = pd.read_excel(io="test.xlsx", sheet_name=1)
 
 ### 2. 计算各行和各列的和并增加新列和新行作为记录
 
-方法一，借助lamda表达式
+#### 方法一: 借助lamda表达式
 
 ```python
 df["合计"] = df.apply(lambda x: x.sum(), axis=1)
 df.loc["合计"] = df.apply(lambda x: x.sum())
 ```
 
-方法二, 借助np.sum函数
+#### 方法二: 借助np.sum函数
 
 ```python
 import numpy as np
@@ -46,7 +45,7 @@ df["合计"] = df.apply(np.sum, axis=1)
 df.loc["合计"] = df.apply(np.sum, axis=0)
 ```
 
-两种方法输出相同：
+#### 两种方法输出相同：
 
 |    | A   | B   | C   | D   | 合计   |
 |----|-----|-----|-----|-----|------|
