@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="DataFrame对行和列求和及添加新行和列, 火柴人的Blog">
+    <meta name="keywords" content="Pandas条件筛选, 火柴人的Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>DataFrame对行和列求和及添加新行和列 | 火柴人的Blog</title>
+    <title>Pandas条件筛选 | 火柴人的Blog</title>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/JokerLJZ/Image/master/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -281,12 +281,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/JokerLJZ/Image/master/740128.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/JokerLJZ/Image/master/226625.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">DataFrame对行和列求和及添加新行和列</h1>
+                    <h1 class="description center-align post-title">Pandas条件筛选</h1>
                 </div>
             </div>
         </div>
@@ -411,10 +411,6 @@
                                 <span class="chip bg-color">Pandas</span>
                             </a>
                         
-                            <a href="/tags/DataFrame/">
-                                <span class="chip bg-color">DataFrame</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -436,21 +432,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-26
+                    2020-03-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-26
+                    2020-03-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    276
+                    585
                 </div>
                 
 
@@ -463,150 +459,278 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-Excel数据格式如下-从Excel文件中获取数据："><a href="#1-Excel数据格式如下-从Excel文件中获取数据：" class="headerlink" title="1. Excel数据格式如下,从Excel文件中获取数据："></a>1. Excel数据格式如下,从Excel文件中获取数据：</h3><pre class=" language-python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_excel<span class="token punctuation">(</span>io<span class="token operator">=</span><span class="token string">"test.xlsx"</span><span class="token punctuation">,</span> sheet_name<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span></code></pre>
+                <h2 id="1-原始数据"><a href="#1-原始数据" class="headerlink" title="1. 原始数据"></a>1. 原始数据</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+data <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>
+    np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"北京"</span><span class="token punctuation">,</span> <span class="token string">"上海"</span><span class="token punctuation">,</span> <span class="token string">"西安"</span><span class="token punctuation">,</span> <span class="token string">"成都"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"智障数量"</span><span class="token punctuation">,</span> <span class="token string">"天才数量"</span><span class="token punctuation">,</span> <span class="token string">"逗逼数量"</span><span class="token punctuation">,</span> <span class="token string">"脑残数量"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>Data：</p>
 <table>
 <thead>
 <tr>
 <th></th>
-<th>A</th>
-<th>B</th>
-<th>C</th>
-<th>D</th>
+<th>智障数量</th>
+<th>天才数量</th>
+<th>逗逼数量</th>
+<th>脑残数量</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>0</td>
-<td>58</td>
-<td>-5</td>
-<td>19</td>
-<td>-5</td>
-</tr>
-<tr>
+<td>北京</td>
 <td>1</td>
-<td>15</td>
-<td>98</td>
-<td>38</td>
-<td>43</td>
-</tr>
-<tr>
 <td>2</td>
-<td>58</td>
-<td>21</td>
-<td>19</td>
-<td>1</td>
-</tr>
-<tr>
 <td>3</td>
-<td>16</td>
-<td>28</td>
-<td>84</td>
-<td>60</td>
-</tr>
-<tr>
 <td>4</td>
-<td>92</td>
-<td>99</td>
-<td>89</td>
-<td>98</td>
 </tr>
 <tr>
+<td>上海</td>
 <td>5</td>
-<td>61</td>
-<td>37</td>
-<td>53</td>
-<td>97</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
 </tr>
 <tr>
-<td>6</td>
-<td>60</td>
+<td>西安</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+</tr>
+<tr>
+<td>成都</td>
+<td>13</td>
 <td>14</td>
-<td>79</td>
-<td>99</td>
+<td>15</td>
+<td>16</td>
 </tr>
 </tbody></table>
-<h3 id="2-计算各行和各列的和并增加新列和新行作为记录"><a href="#2-计算各行和各列的和并增加新列和新行作为记录" class="headerlink" title="2. 计算各行和各列的和并增加新列和新行作为记录"></a>2. 计算各行和各列的和并增加新列和新行作为记录</h3><h4 id="方法一-借助lamda表达式"><a href="#方法一-借助lamda表达式" class="headerlink" title="方法一: 借助lamda表达式"></a>方法一: 借助lamda表达式</h4><pre class=" language-python"><code class="language-python">df<span class="token punctuation">[</span><span class="token string">"合计"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">.</span>apply<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token string">"合计"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">.</span>apply<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-<h4 id="方法二-借助np-sum函数"><a href="#方法二-借助np-sum函数" class="headerlink" title="方法二: 借助np.sum函数"></a>方法二: 借助np.sum函数</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-
-df<span class="token punctuation">[</span><span class="token string">"合计"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">.</span>apply<span class="token punctuation">(</span>np<span class="token punctuation">.</span>sum<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token string">"合计"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">.</span>apply<span class="token punctuation">(</span>np<span class="token punctuation">.</span>sum<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span></code></pre>
-<h4 id="两种方法输出相同："><a href="#两种方法输出相同：" class="headerlink" title="两种方法输出相同："></a>两种方法输出相同：</h4><table>
+<h2 id="2-索引筛选"><a href="#2-索引筛选" class="headerlink" title="2. 索引筛选"></a>2. 索引筛选</h2><h3 id="1）使用单个值或者序列，可以筛选出多列数据"><a href="#1）使用单个值或者序列，可以筛选出多列数据" class="headerlink" title="1）使用单个值或者序列，可以筛选出多列数据"></a>1）使用单个值或者序列，可以筛选出多列数据</h3><pre class=" language-python"><code class="language-python">data<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"智障数量"</span><span class="token punctuation">,</span> <span class="token string">"天才数量"</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
+<p>data:</p>
+<table>
 <thead>
 <tr>
 <th></th>
-<th>A</th>
-<th>B</th>
-<th>C</th>
-<th>D</th>
-<th>合计</th>
+<th>智障数量</th>
+<th>天才数量</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>0</td>
-<td>58</td>
-<td>-5</td>
-<td>19</td>
-<td>-5</td>
-<td>67</td>
-</tr>
-<tr>
+<td>北京</td>
 <td>1</td>
-<td>15</td>
-<td>98</td>
-<td>38</td>
-<td>43</td>
-<td>195</td>
-</tr>
-<tr>
 <td>2</td>
-<td>58</td>
-<td>21</td>
-<td>19</td>
-<td>1</td>
-<td>101</td>
 </tr>
 <tr>
-<td>3</td>
-<td>16</td>
-<td>28</td>
-<td>84</td>
-<td>60</td>
-<td>191</td>
-</tr>
-<tr>
-<td>4</td>
-<td>92</td>
-<td>99</td>
-<td>89</td>
-<td>98</td>
-<td>382</td>
-</tr>
-<tr>
+<td>上海</td>
 <td>5</td>
-<td>61</td>
-<td>37</td>
-<td>53</td>
-<td>97</td>
-<td>253</td>
-</tr>
-<tr>
 <td>6</td>
-<td>60</td>
-<td>14</td>
-<td>79</td>
-<td>99</td>
-<td>258</td>
 </tr>
 <tr>
-<td>合计</td>
-<td>360</td>
-<td>292</td>
-<td>381</td>
-<td>393</td>
-<td>1426</td>
+<td>西安</td>
+<td>9</td>
+<td>10</td>
+</tr>
+<tr>
+<td>成都</td>
+<td>13</td>
+<td>14</td>
 </tr>
 </tbody></table>
-<p>关于dataframe 的apply()函数用法可以<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html#pandas.DataFrame.apply" target="_blank" rel="noopener">参考这里</a>。</p>
+<h3 id="2）使用切片的方式针对数据进行筛选"><a href="#2）使用切片的方式针对数据进行筛选" class="headerlink" title="2）使用切片的方式针对数据进行筛选"></a>2）使用切片的方式针对数据进行筛选</h3><pre class=" language-python"><code class="language-python">data<span class="token punctuation">[</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">]</span></code></pre>
+<p>data:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>智障数量</th>
+<th>天才数量</th>
+<th>逗逼数量</th>
+<th>脑残数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>北京</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>上海</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+</tbody></table>
+<h3 id="3）Pandas接受bool数组进行切片筛选"><a href="#3）Pandas接受bool数组进行切片筛选" class="headerlink" title="3）Pandas接受bool数组进行切片筛选"></a>3）Pandas接受bool数组进行切片筛选</h3><pre class=" language-python"><code class="language-python">df_bool <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token string">"逗逼数量"</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">5</span><span class="token punctuation">]</span></code></pre>
+<p>生成bool数组, df_bool确定需要保留的数据:</p>
+<table>
+<thead>
+<tr>
+<th>北京</th>
+<th>FALSE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>上海</td>
+<td>TRUE</td>
+</tr>
+<tr>
+<td>西安</td>
+<td>TRUE</td>
+</tr>
+<tr>
+<td>成都</td>
+<td>TRUE</td>
+</tr>
+</tbody></table>
+<p>bool数据作为索引对数据进行筛选</p>
+<pre class=" language-python"><code class="language-python">data<span class="token punctuation">[</span>df_bool<span class="token punctuation">]</span></code></pre>
+<p>data:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>智障数量</th>
+<th>天才数量</th>
+<th>逗逼数量</th>
+<th>脑残数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>上海</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td>西安</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+</tr>
+<tr>
+<td>成都</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+</tr>
+</tbody></table>
+<h2 id="loc和iloc进行数据筛选"><a href="#loc和iloc进行数据筛选" class="headerlink" title="loc和iloc进行数据筛选"></a>loc和iloc进行数据筛选</h2><h3 id="loc使用标签索引获取数据"><a href="#loc使用标签索引获取数据" class="headerlink" title="loc使用标签索引获取数据"></a>loc使用标签索引获取数据</h3><p>使用loc可以类似于使用bool数据对dataframe数据进行筛选</p>
+<pre class=" language-python"><code class="language-python">data<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>df_bool<span class="token punctuation">]</span></code></pre>
+<p>筛选后可以获得与data[df_bool]一样的结果</p>
+<p>data:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>智障数量</th>
+<th>天才数量</th>
+<th>逗逼数量</th>
+<th>脑残数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>上海</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td>西安</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+</tr>
+<tr>
+<td>成都</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+</tr>
+</tbody></table>
+<p>loc也可以对多行列的数据进行直接筛选</p>
+<pre class=" language-python"><code class="language-python">data<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"北京"</span><span class="token punctuation">,</span> <span class="token string">"上海"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"智障数量"</span><span class="token punctuation">,</span><span class="token string">"天才数量"</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
+<p>data:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>智障数量</th>
+<th>天才数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>北京</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>上海</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody></table>
+<h3 id="iloc使用数据位置进行筛选"><a href="#iloc使用数据位置进行筛选" class="headerlink" title="iloc使用数据位置进行筛选"></a>iloc使用数据位置进行筛选</h3><p>iloc也可以对多行列的数据进行直接筛选，对应loc的例子</p>
+<pre class=" language-python"><code class="language-python">data<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
+<p>data:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>智障数量</th>
+<th>天才数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>北京</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>上海</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody></table>
+<p>iloc的索引功能也可以用于切片</p>
+<pre class=" language-python"><code class="language-python">data<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span>data<span class="token punctuation">.</span>智障数量 <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">]</span></code></pre>
+<p>data:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>智障数量</th>
+<th>天才数量</th>
+<th>逗逼数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>上海</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr>
+<td>西安</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+</tr>
+<tr>
+<td>成都</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+</tr>
+</tbody></table>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -650,7 +774,7 @@ df<span class="token punctuation">.</span>loc<span class="token punctuation">[</
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://jokerliu.com/2020/02/26/dataframe-dui-xing-he-lie-qiu-he-ji-tian-jia-xin-xing-he-lie/">http://jokerliu.com/2020/02/26/dataframe-dui-xing-he-lie-qiu-he-ji-tian-jia-xin-xing-he-lie/</a>
+                    <a href="http://jokerliu.com/2020/03/14/pandas-tiao-jian-shai-xuan/">http://jokerliu.com/2020/03/14/pandas-tiao-jian-shai-xuan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -694,10 +818,6 @@ df<span class="token punctuation">.</span>loc<span class="token punctuation">[</
                             
                                 <a href="/tags/Pandas/">
                                     <span class="chip bg-color">Pandas</span>
-                                </a>
-                            
-                                <a href="/tags/DataFrame/">
-                                    <span class="chip bg-color">DataFrame</span>
                                 </a>
                             
                         </div>
@@ -868,7 +988,7 @@ df<span class="token punctuation">.</span>loc<span class="token punctuation">[</
         repo: 'JokerLJZ.github.io',
         owner: 'JokerLJZ',
         admin: ["JokerLJZ"],
-        id: '2020-02-26T00-57-35',
+        id: '2020-03-14T23-44-41',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -889,9 +1009,10 @@ df<span class="token punctuation">.</span>loc<span class="token punctuation">[</
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/03/14/pandas-tiao-jian-shai-xuan/">
                     <div class="card-image">
@@ -908,9 +1029,9 @@ df<span class="token punctuation">.</span>loc<span class="token punctuation">[</
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -923,6 +1044,7 @@ df<span class="token punctuation">.</span>loc<span class="token punctuation">[</
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -945,23 +1067,23 @@ df<span class="token punctuation">.</span>loc<span class="token punctuation">[</
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/24/pandas-shu-ju-yu-chu-li/">
+                <a href="/2020/02/26/dataframe-dui-xing-he-lie-qiu-he-ji-tian-jia-xin-xing-he-lie/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/JokerLJZ/Image/master/加藤惠-3.jpg" class="responsive-img" alt="Pandas数据预处理">
+                        <img src="https://raw.githubusercontent.com/JokerLJZ/Image/master/740128.png" class="responsive-img" alt="DataFrame对行和列求和及添加新行和列">
                         
-                        <span class="card-title">Pandas数据预处理</span>
+                        <span class="card-title">DataFrame对行和列求和及添加新行和列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            对Pandas DataFrame数据进行预处理
+                            Pandas DataFrame对行和列求和及添加新行和列
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-26
                             </span>
                         <span class="publish-author">
                             
