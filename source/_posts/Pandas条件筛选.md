@@ -63,7 +63,7 @@ data:
 ### 3）Pandas接受bool数组进行切片筛选
 
 ```python
-df_bool = data["逗逼数量"] > 5]
+df_bool = data[["逗逼数量"] > 5]
 ```
 
 生成bool数组, df_bool确定需要保留的数据:
