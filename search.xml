@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>原则的意义</title>
+      <link href="/2020/03/18/yuan-ze-de-yi-yi/"/>
+      <url>/2020/03/18/yuan-ze-de-yi-yi/</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 投资 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 投资 </tag>
+            
+            <tag> 股市 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Pandas条件筛选</title>
       <link href="/2020/03/14/pandas-tiao-jian-shai-xuan/"/>
       <url>/2020/03/14/pandas-tiao-jian-shai-xuan/</url>
