@@ -1,7 +1,7 @@
 ---
 title: Pandas条件筛选
 date: 2020-03-14 23:44:41
-img: https://raw.githubusercontent.com/JokerLJZ/Image/master/226625.jpg
+img: http://qiniu.jokerliu.top/226625.jpg
 categories: Python
 summary: 介绍Pandas对数据进行条件筛选的方法
 author: 火柴人

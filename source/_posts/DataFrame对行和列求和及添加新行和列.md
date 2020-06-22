@@ -1,7 +1,7 @@
 ---
 title: DataFrame对行和列求和及添加新行和列
 date: 2020-02-26 00:57:35
-img: https://raw.githubusercontent.com/JokerLJZ/Image/master/740128.png
+img: http://qiniu.jokerliu.top/740128.png
 categories: Python
 summary: Pandas DataFrame对行和列求和及添加新行和列
 author: 火柴人

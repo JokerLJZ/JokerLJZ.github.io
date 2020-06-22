@@ -1,7 +1,7 @@
 ---
 title: Pandas数据预处理
 date: 2020-02-24 09:27:24
-img: https://raw.githubusercontent.com/JokerLJZ/Image/master/加藤惠-3.jpg
+img: http://qiniu.jokerliu.top/加藤惠-3.jpg
 categories: Python
 summary: 对Pandas DataFrame数据进行预处理
 author: 火柴人
