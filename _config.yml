@@ -5,11 +5,11 @@
 # Site
 title: 火柴人的Blog
 subtitle: '欢迎来到火柴人的Blog'
-description: ''
-keywords:
+description: '分享我的生活与工作'
+keywords: 
 author: 火柴人
 language: zh-CN
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
