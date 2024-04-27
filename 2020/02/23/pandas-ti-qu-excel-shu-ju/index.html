@@ -393,7 +393,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    449
+                    450
                 </div>
                 
 
@@ -445,38 +445,15 @@
 <td>4</td>
 </tr>
 </tbody></table>
-<h2 id="2-使用Pandas的read-excel-函数读取原始数据表中的数据"><a href="#2-使用Pandas的read-excel-函数读取原始数据表中的数据" class="headerlink" title="2. 使用Pandas的read_excel()函数读取原始数据表中的数据"></a>2. 使用Pandas的read_excel()函数读取原始数据表中的数据</h2><p>read_excel()函数可以直接读取excel文件并返回pandas的dataframe数组，index标签默认为行号，columns标签默认为excel表中的第一行，默认读取第一个sheet的数据，可以根据sheet名或者序号进行sheet的索引。<br>官方文档的参数说明请<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html#pandas.read_excel" target="_blank" rel="noopener">点击这里</a></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-<span class="token keyword">import</span> datetime
+<h2 id="2-使用Pandas的read-excel-函数读取原始数据表中的数据"><a href="#2-使用Pandas的read-excel-函数读取原始数据表中的数据" class="headerlink" title="2. 使用Pandas的read_excel()函数读取原始数据表中的数据"></a>2. 使用Pandas的read_excel()函数读取原始数据表中的数据</h2><p>read_excel()函数可以直接读取excel文件并返回pandas的dataframe数组，index标签默认为行号，columns标签默认为excel表中的第一行，默认读取第一个sheet的数据，可以根据sheet名或者序号进行sheet的索引。<br>官方文档的参数说明请<a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html#pandas.read_excel">点击这里</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从EXCEL文件中读取数据</span></span><br><span class="line">df = pd.read_excel(io=<span class="string">&quot;test.xlsx&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出 DataFrame</span></span><br><span class="line">         时间 项目经理    预算  设备数量</span><br><span class="line"><span class="number">0</span>  <span class="number">2020</span>-01-<span class="number">24</span>    张三  <span class="number">2670.0</span>       <span class="number">2</span></span><br><span class="line"><span class="number">1</span>  <span class="number">2019</span>-<span class="number">12</span>-<span class="number">27</span>    李四   <span class="number">283.1</span>       <span class="number">3</span></span><br><span class="line"><span class="number">2</span>  <span class="number">2019</span>-<span class="number">12</span>-<span class="number">27</span>    王二     <span class="number">0.0</span>       <span class="number">1</span></span><br><span class="line"><span class="number">3</span>         NaN    张三    <span class="number">25.0</span>       <span class="number">4</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<span class="token comment" spellcheck="true"># 从EXCEL文件中读取数据</span>
-df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_excel<span class="token punctuation">(</span>io<span class="token operator">=</span><span class="token string">"test.xlsx"</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 输出 DataFrame</span>
-         时间 项目经理    预算  设备数量
-<span class="token number">0</span>  <span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">24</span>    张三  <span class="token number">2670.0</span>       <span class="token number">2</span>
-<span class="token number">1</span>  <span class="token number">2019</span><span class="token operator">-</span><span class="token number">12</span><span class="token operator">-</span><span class="token number">27</span>    李四   <span class="token number">283.1</span>       <span class="token number">3</span>
-<span class="token number">2</span>  <span class="token number">2019</span><span class="token operator">-</span><span class="token number">12</span><span class="token operator">-</span><span class="token number">27</span>    王二     <span class="token number">0.0</span>       <span class="token number">1</span>
-<span class="token number">3</span>         NaN    张三    <span class="token number">25.0</span>       <span class="token number">4</span>
-</code></pre>
 <h2 id="3-读取数据的数据类型"><a href="#3-读取数据的数据类型" class="headerlink" title="3. 读取数据的数据类型"></a>3. 读取数据的数据类型</h2><p>Dataframe 拥有属性dtypes可以查看column数据类型，整数对应int64，浮点数对应float64等</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>dtypes<span class="token punctuation">)</span>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df.dtypes)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出column与对应的数据类型</span></span><br><span class="line">时间         <span class="built_in">object</span></span><br><span class="line">项目经理     <span class="built_in">object</span></span><br><span class="line">预算        float64</span><br><span class="line">设备数量      int64</span><br></pre></td></tr></table></figure>
 
-<span class="token comment" spellcheck="true"># 输出column与对应的数据类型</span>
-时间         object
-项目经理     object
-预算        float64
-设备数量      int64</code></pre>
 <h2 id="4-时间的读取"><a href="#4-时间的读取" class="headerlink" title="4. 时间的读取"></a>4. 时间的读取</h2><p>根据读取的数据可以看到时间未对应到datetime数据类型，根据read_excel函数的官方文档，函数的参数:<br><strong>parse_dates</strong>: bool, list-like, or dict, default False<br>可以将指定column设置为时间类型，本例使用list格式修改时间column为datetime格式</p>
-<pre class=" language-python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_excel<span class="token punctuation">(</span>io<span class="token operator">=</span><span class="token string">"test.xlsx"</span><span class="token punctuation">,</span> parse_dates<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"时间"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span>dtypes<span class="token punctuation">)</span>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">df = pd.read_excel(io=<span class="string">&quot;test.xlsx&quot;</span>, parse_dates=[<span class="string">&quot;时间&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(df.dtypes)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line">时间        datetime64[ns]</span><br><span class="line">项目经理            <span class="built_in">object</span></span><br><span class="line">预算               float64</span><br><span class="line">设备数量             int64</span><br></pre></td></tr></table></figure>
 
-<span class="token comment" spellcheck="true"># 输出</span>
-时间        datetime64<span class="token punctuation">[</span>ns<span class="token punctuation">]</span>
-项目经理            object
-预算               float64
-设备数量             int64</code></pre>
 <h3 id="目前本人使用的项目仅用到以上举例的用法及参数，参考官方文档read-excel函数可以有多种参数设定以应对各种不同的数据提取需求。"><a href="#目前本人使用的项目仅用到以上举例的用法及参数，参考官方文档read-excel函数可以有多种参数设定以应对各种不同的数据提取需求。" class="headerlink" title="目前本人使用的项目仅用到以上举例的用法及参数，参考官方文档read_excel函数可以有多种参数设定以应对各种不同的数据提取需求。"></a>目前本人使用的项目仅用到以上举例的用法及参数，参考官方文档read_excel函数可以有多种参数设定以应对各种不同的数据提取需求。</h3>
                 
             </div>

@@ -393,7 +393,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    533
+                    563
                 </div>
                 
 
@@ -410,12 +410,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-原始数据"><a href="#1-原始数据" class="headerlink" title="1. 原始数据"></a>1. 原始数据</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-data <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>
-    np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"北京"</span><span class="token punctuation">,</span> <span class="token string">"上海"</span><span class="token punctuation">,</span> <span class="token string">"西安"</span><span class="token punctuation">,</span> <span class="token string">"成都"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"智障数量"</span><span class="token punctuation">,</span> <span class="token string">"天才数量"</span><span class="token punctuation">,</span> <span class="token string">"逗逼数量"</span><span class="token punctuation">,</span> <span class="token string">"脑残数量"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+                <h2 id="1-原始数据"><a href="#1-原始数据" class="headerlink" title="1. 原始数据"></a>1. 原始数据</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">data = pd.DataFrame(</span><br><span class="line">    np.arange(<span class="number">16</span>).reshape((<span class="number">4</span>,<span class="number">4</span>)),</span><br><span class="line">    index=[<span class="string">&quot;北京&quot;</span>, <span class="string">&quot;上海&quot;</span>, <span class="string">&quot;西安&quot;</span>, <span class="string">&quot;成都&quot;</span>],</span><br><span class="line">    columns=[<span class="string">&quot;智障数量&quot;</span>, <span class="string">&quot;天才数量&quot;</span>, <span class="string">&quot;逗逼数量&quot;</span>, <span class="string">&quot;脑残数量&quot;</span>])</span><br></pre></td></tr></table></figure>
+
 <p>Data：</p>
 <table>
 <thead>
@@ -456,7 +452,8 @@ data <span class="token operator">=</span> pd<span class="token punctuation">.</
 <td>16</td>
 </tr>
 </tbody></table>
-<h2 id="2-索引筛选"><a href="#2-索引筛选" class="headerlink" title="2. 索引筛选"></a>2. 索引筛选</h2><h3 id="1）使用单个值或者序列，可以筛选出多列数据"><a href="#1）使用单个值或者序列，可以筛选出多列数据" class="headerlink" title="1）使用单个值或者序列，可以筛选出多列数据"></a>1）使用单个值或者序列，可以筛选出多列数据</h3><pre class=" language-python"><code class="language-python">data<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"智障数量"</span><span class="token punctuation">,</span> <span class="token string">"天才数量"</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
+<h2 id="2-索引筛选"><a href="#2-索引筛选" class="headerlink" title="2. 索引筛选"></a>2. 索引筛选</h2><h3 id="1）使用单个值或者序列，可以筛选出多列数据"><a href="#1）使用单个值或者序列，可以筛选出多列数据" class="headerlink" title="1）使用单个值或者序列，可以筛选出多列数据"></a>1）使用单个值或者序列，可以筛选出多列数据</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data[[<span class="string">&quot;智障数量&quot;</span>, <span class="string">&quot;天才数量&quot;</span>]]</span><br></pre></td></tr></table></figure>
+
 <p>data:</p>
 <table>
 <thead>
@@ -487,7 +484,8 @@ data <span class="token operator">=</span> pd<span class="token punctuation">.</
 <td>14</td>
 </tr>
 </tbody></table>
-<h3 id="2）使用切片的方式针对数据进行筛选"><a href="#2）使用切片的方式针对数据进行筛选" class="headerlink" title="2）使用切片的方式针对数据进行筛选"></a>2）使用切片的方式针对数据进行筛选</h3><pre class=" language-python"><code class="language-python">data<span class="token punctuation">[</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">]</span></code></pre>
+<h3 id="2）使用切片的方式针对数据进行筛选"><a href="#2）使用切片的方式针对数据进行筛选" class="headerlink" title="2）使用切片的方式针对数据进行筛选"></a>2）使用切片的方式针对数据进行筛选</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data[: <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
 <p>data:</p>
 <table>
 <thead>
@@ -514,7 +512,8 @@ data <span class="token operator">=</span> pd<span class="token punctuation">.</
 <td>8</td>
 </tr>
 </tbody></table>
-<h3 id="3）Pandas接受bool数组进行切片筛选"><a href="#3）Pandas接受bool数组进行切片筛选" class="headerlink" title="3）Pandas接受bool数组进行切片筛选"></a>3）Pandas接受bool数组进行切片筛选</h3><pre class=" language-python"><code class="language-python">df_bool <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"逗逼数量"</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">5</span><span class="token punctuation">]</span></code></pre>
+<h3 id="3）Pandas接受bool数组进行切片筛选"><a href="#3）Pandas接受bool数组进行切片筛选" class="headerlink" title="3）Pandas接受bool数组进行切片筛选"></a>3）Pandas接受bool数组进行切片筛选</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_bool = data[[<span class="string">&quot;逗逼数量&quot;</span>] &gt; <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+
 <p>生成bool数组, df_bool确定需要保留的数据:</p>
 <table>
 <thead>
@@ -537,7 +536,8 @@ data <span class="token operator">=</span> pd<span class="token punctuation">.</
 </tr>
 </tbody></table>
 <p>bool数据作为索引对数据进行筛选</p>
-<pre class=" language-python"><code class="language-python">data<span class="token punctuation">[</span>df_bool<span class="token punctuation">]</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data[df_bool]</span><br></pre></td></tr></table></figure>
+
 <p>data:</p>
 <table>
 <thead>
@@ -572,7 +572,8 @@ data <span class="token operator">=</span> pd<span class="token punctuation">.</
 </tr>
 </tbody></table>
 <h2 id="loc和iloc进行数据筛选"><a href="#loc和iloc进行数据筛选" class="headerlink" title="loc和iloc进行数据筛选"></a>loc和iloc进行数据筛选</h2><h3 id="loc使用标签索引获取数据"><a href="#loc使用标签索引获取数据" class="headerlink" title="loc使用标签索引获取数据"></a>loc使用标签索引获取数据</h3><p>使用loc可以类似于使用bool数据对dataframe数据进行筛选</p>
-<pre class=" language-python"><code class="language-python">data<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>df_bool<span class="token punctuation">]</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.loc[df_bool]</span><br></pre></td></tr></table></figure>
+
 <p>筛选后可以获得与data[df_bool]一样的结果</p>
 <p>data:</p>
 <table>
@@ -608,7 +609,8 @@ data <span class="token operator">=</span> pd<span class="token punctuation">.</
 </tr>
 </tbody></table>
 <p>loc也可以对多行列的数据进行直接筛选</p>
-<pre class=" language-python"><code class="language-python">data<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"北京"</span><span class="token punctuation">,</span> <span class="token string">"上海"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"智障数量"</span><span class="token punctuation">,</span><span class="token string">"天才数量"</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.loc[[<span class="string">&quot;北京&quot;</span>, <span class="string">&quot;上海&quot;</span>], [<span class="string">&quot;智障数量&quot;</span>,<span class="string">&quot;天才数量&quot;</span>]]</span><br></pre></td></tr></table></figure>
+
 <p>data:</p>
 <table>
 <thead>
@@ -630,7 +632,8 @@ data <span class="token operator">=</span> pd<span class="token punctuation">.</
 </tr>
 </tbody></table>
 <h3 id="iloc使用数据位置进行筛选"><a href="#iloc使用数据位置进行筛选" class="headerlink" title="iloc使用数据位置进行筛选"></a>iloc使用数据位置进行筛选</h3><p>iloc也可以对多行列的数据进行直接筛选，对应loc的例子</p>
-<pre class=" language-python"><code class="language-python">data<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.iloc[[<span class="number">0</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">1</span>]]</span><br></pre></td></tr></table></figure>
+
 <p>data:</p>
 <table>
 <thead>
@@ -652,7 +655,8 @@ data <span class="token operator">=</span> pd<span class="token punctuation">.</
 </tr>
 </tbody></table>
 <p>iloc的索引功能也可以用于切片</p>
-<pre class=" language-python"><code class="language-python">data<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span>data<span class="token punctuation">.</span>智障数量 <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">]</span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.iloc[:, :<span class="number">3</span>][data.智障数量 &gt; <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
 <p>data:</p>
 <table>
 <thead>

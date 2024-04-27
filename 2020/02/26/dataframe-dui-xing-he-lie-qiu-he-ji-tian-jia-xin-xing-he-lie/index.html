@@ -397,7 +397,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    224
+                    233
                 </div>
                 
 
@@ -414,7 +414,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-Excel数据格式如下-从Excel文件中获取数据："><a href="#1-Excel数据格式如下-从Excel文件中获取数据：" class="headerlink" title="1. Excel数据格式如下,从Excel文件中获取数据："></a>1. Excel数据格式如下,从Excel文件中获取数据：</h3><pre class=" language-python"><code class="language-python">df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_excel<span class="token punctuation">(</span>io<span class="token operator">=</span><span class="token string">"test.xlsx"</span><span class="token punctuation">,</span> sheet_name<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span></code></pre>
+                <h3 id="1-Excel数据格式如下-从Excel文件中获取数据："><a href="#1-Excel数据格式如下-从Excel文件中获取数据：" class="headerlink" title="1. Excel数据格式如下,从Excel文件中获取数据："></a>1. Excel数据格式如下,从Excel文件中获取数据：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df = pd.read_excel(io=<span class="string">&quot;test.xlsx&quot;</span>, sheet_name=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
@@ -475,12 +476,10 @@
 <td>99</td>
 </tr>
 </tbody></table>
-<h3 id="2-计算各行和各列的和并增加新列和新行作为记录"><a href="#2-计算各行和各列的和并增加新列和新行作为记录" class="headerlink" title="2. 计算各行和各列的和并增加新列和新行作为记录"></a>2. 计算各行和各列的和并增加新列和新行作为记录</h3><h4 id="方法一-借助lamda表达式"><a href="#方法一-借助lamda表达式" class="headerlink" title="方法一: 借助lamda表达式"></a>方法一: 借助lamda表达式</h4><pre class=" language-python"><code class="language-python">df<span class="token punctuation">[</span><span class="token string">"合计"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">.</span>apply<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token string">"合计"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">.</span>apply<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-<h4 id="方法二-借助np-sum函数"><a href="#方法二-借助np-sum函数" class="headerlink" title="方法二: 借助np.sum函数"></a>方法二: 借助np.sum函数</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<h3 id="2-计算各行和各列的和并增加新列和新行作为记录"><a href="#2-计算各行和各列的和并增加新列和新行作为记录" class="headerlink" title="2. 计算各行和各列的和并增加新列和新行作为记录"></a>2. 计算各行和各列的和并增加新列和新行作为记录</h3><h4 id="方法一-借助lamda表达式"><a href="#方法一-借助lamda表达式" class="headerlink" title="方法一: 借助lamda表达式"></a>方法一: 借助lamda表达式</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&quot;合计&quot;</span>] = df.apply(<span class="keyword">lambda</span> x: x.<span class="built_in">sum</span>(), axis=<span class="number">1</span>)</span><br><span class="line">df.loc[<span class="string">&quot;合计&quot;</span>] = df.apply(<span class="keyword">lambda</span> x: x.<span class="built_in">sum</span>())</span><br></pre></td></tr></table></figure>
 
-df<span class="token punctuation">[</span><span class="token string">"合计"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">.</span>apply<span class="token punctuation">(</span>np<span class="token punctuation">.</span>sum<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token string">"合计"</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">.</span>apply<span class="token punctuation">(</span>np<span class="token punctuation">.</span>sum<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span></code></pre>
+<h4 id="方法二-借助np-sum函数"><a href="#方法二-借助np-sum函数" class="headerlink" title="方法二: 借助np.sum函数"></a>方法二: 借助np.sum函数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">df[<span class="string">&quot;合计&quot;</span>] = df.apply(np.<span class="built_in">sum</span>, axis=<span class="number">1</span>)</span><br><span class="line">df.loc[<span class="string">&quot;合计&quot;</span>] = df.apply(np.<span class="built_in">sum</span>, axis=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
 <h4 id="两种方法输出相同："><a href="#两种方法输出相同：" class="headerlink" title="两种方法输出相同："></a>两种方法输出相同：</h4><table>
 <thead>
 <tr>
@@ -557,7 +556,7 @@ df<span class="token punctuation">.</span>loc<span class="token punctuation">[</
 <td>1426</td>
 </tr>
 </tbody></table>
-<p>关于dataframe 的apply()函数用法可以<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html#pandas.DataFrame.apply" target="_blank" rel="noopener">参考这里</a>。</p>
+<p>关于dataframe 的apply()函数用法可以<a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html#pandas.DataFrame.apply">参考这里</a>。</p>
 
                 
             </div>
